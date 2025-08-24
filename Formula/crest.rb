@@ -31,7 +31,7 @@ class Crest < Formula
     meson_args = std_meson_args
     meson_args << "-Dla_backend=openblas"
     meson_args << "-Dfortran_args=-ffree-line-length-none"
-    meson_args << "-Dfortran_link_args=-Wl,-stack_size,0x1000000" if OS.mac?
+    #meson_args << "-Dfortran_link_args=-Wl,-stack_size,0x1000000" if OS.mac?
     system "meson", "setup", "_build", *meson_args
     system "meson", "compile", "-C", "_build"
     system "meson", "install", "-C", "_build", "--no-rebuild"
